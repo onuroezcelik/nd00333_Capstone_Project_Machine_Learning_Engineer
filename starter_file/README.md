@@ -1,8 +1,6 @@
-*NOTE:* This file is a template that you can use to create the README for your project. The *TODO* comments below will highlight the information you should be sure to include.
+# Capstone Project - Azure Machine Learning Engineer
 
-# Your Project Title Here
-
-*TODO:* Write a short introduction to your project.
+In this project, two models are created: one using Automated ML (referred to as AutoML) and one customized model whose hyperparameters are tuned using HyperDrive. The performance of both models is then compared, and the best-performing model is deployed.
 
 ## Project Set Up and Installation
 *OPTIONAL:* If your project has any special installation steps, this is where you should put it. To turn this project into a professional portfolio project, you are encouraged to explain how to set up this project in AzureML.
