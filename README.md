@@ -53,6 +53,8 @@ The dataset is firstly downloaded from https://www.kaggle.com/datasets/andrewmvd
 
 ![](images/heart-failure-clinical-dataset-kaggle.png)
 
+![](images/heart-failure-clinical-dataset-kaggle-registered.png)
+
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
 
