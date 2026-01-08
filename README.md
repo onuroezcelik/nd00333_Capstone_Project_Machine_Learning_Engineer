@@ -49,7 +49,9 @@ The input features used for model training include clinical and demographic attr
 - DEATH_EVENT : If the patient deceased during the follow-up period (boolean).
 
 ### Access
-*TODO*: Explain how you are accessing the data in your workspace.
+The dataset is firstly downloaded from https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data, then uploaded locally to Azure ML Workspace, and then used directly in the experiments.
+
+![](images/heart-failure-clinical-dataset.png)
 
 ## Automated ML
 *TODO*: Give an overview of the `automl` settings and configuration you used for this experiment
