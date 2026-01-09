@@ -53,6 +53,8 @@ The dataset is firstly downloaded from https://www.kaggle.com/datasets/andrewmvd
 
 ![](images/heart-failure-clinical-dataset-kaggle.png)
 
+Registering dataset in Azure ML Studio:
+
 ![](images/heart-failure-clinical-dataset-registered.png)
 
 ## Automated ML
