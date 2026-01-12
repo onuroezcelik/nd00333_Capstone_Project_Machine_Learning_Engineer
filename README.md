@@ -83,6 +83,7 @@ automl_config = AutoMLConfig(compute_target=compute_target,
 ### Results
 What were the parameters of the model?
 The best performing model is the VotingEnsemble with an AUC_weighted value of 0.89
+![](images/automl_best_model.png)
 
 - Since the AutoML run used automatic featurization (featurization='auto'), model performance could be improved by applying domain-specific feature transformations before training, allowing AutoML to start from more informative input features.
 - With an experiment timeout of only 20 minutes (experiment_timeout_minutes=20) and a limited number of concurrent iterations, increasing the time budget would allow AutoML to evaluate more algorithms and hyperparameter combinations, potentially leading to a stronger VotingEnsemble.
