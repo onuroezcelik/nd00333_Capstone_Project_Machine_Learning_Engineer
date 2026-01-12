@@ -26,8 +26,8 @@ def main():
 
     run = Run.get_context()
 
-    run.log("Regularization Strength:", np.float(args.C))
-    run.log("Max iterations:", np.int(args.max_iter))
+    run.log("Regularization Strength:", float(args.C))
+    run.log("Max iterations:", int(args.max_iter))
 
     subscription_id = 'f5091c60-1c3c-430f-8d81-d802f6bf2414'
     resource_group = 'aml-quickstarts-291922'
@@ -44,8 +44,8 @@ def main():
 
     model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
 
-    accuracy = model.score(x_test, y_test)
-    run.log("Accuracy", np.float(accuracy))
+    auc_weighted = model.score(x_test, y_test)
+    run.log("AUC_weighted", float(auc_weighted))
 
     os.makedirs('outputs', exist_ok=True)
     joblib.dump(model,'outputs/model.joblib')
