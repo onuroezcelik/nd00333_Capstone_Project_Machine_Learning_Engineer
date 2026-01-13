@@ -177,7 +177,9 @@ Second, the hyperparameter search space was very small. Only two values of C and
 Finally, accuracy was used as the optimization metric. Since the dataset is imbalanced, using AUC instead of accuracy could lead to a more meaningful and better-generalizing model.
 
 ## Model Deployment
-*TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
+Based on the experiment results, the models trained with HyperDrive did not achieve competitive performance compared to the models produced by AutoML. AutoML evaluated a broader range of algorithms and preprocessing pipelines and consistently delivered higher-performing models. For this reason, the model selected for deployment was taken from the AutoML best run. The best-performing model was generated using a VotingEnsemble algorithm, which combines the predictions of multiple individual models to achieve better generalization and robustness.
+
+The VotingEnsemble model was deployed as an Azure Machine Learning web service, allowing it to be consumed via a REST API. This enables external applications to send patient data to the endpoint and receive real-time predictions for heart failure risk.
 
 ## Screen Recording
 Due to company policy restrictions, screen recording is not permitted in the working environment.
