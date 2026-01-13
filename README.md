@@ -81,7 +81,7 @@ automl_config = AutoMLConfig(compute_target=compute_target,
                             )
 ```
 ### Results
-#### Completed AutoML Runs
+#### Completed AutoML Job
 
 ![](images/jobs_completed.png)
 
@@ -139,7 +139,7 @@ The HyperDrive experiment was configured with the following settings:
 The BanditPolicy stops poorly performing runs early if their performance is significantly worse than the best run, which saves compute time and speeds up the search.
 
 ### Results
-#### Completed Hyperdrive Runs
+#### Completed Hyperdrive Job
 
 ![](images/jobs_completed.png)
 
@@ -151,6 +151,8 @@ The HyperDrive experiment identified the following best-performing run:
 This means that the trained Logistic Regression model correctly classified approximately 77% of the patients in the dataset.
 
 ![](images/hyperdrive_best_model.png)
+
+![](images/hyperdrive_best_model_run.png)
 
 Best model parameters:
 
