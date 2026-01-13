@@ -139,6 +139,8 @@ The HyperDrive experiment identified the following best-performing run:
 
 This means that the trained Logistic Regression model correctly classified approximately 77% of the patients in the dataset.
 
+![](images/hyperdrive_best_model.png)
+
 #### Best model parameters
 
 | Hyperparameter | Value | Interpretation                                                                        |
@@ -147,6 +149,8 @@ This means that the trained Logistic Regression model correctly classified appro
 | **max_iter**   | 50    | Enough iterations for the optimizer to converge                                       |
 
 With these parameters, the model achieved the highest validation accuracy among all HyperDrive runs.
+
+![](images/hyperdrive_best_model_rundetails.png)
 
 #### Model results and performance
 The model performance could be improved in a few practical ways:
