@@ -44,8 +44,8 @@ def main():
 
     model = LogisticRegression(C=args.C, max_iter=args.max_iter).fit(x_train, y_train)
 
-    auc_weighted = model.score(x_test, y_test)
-    run.log("AUC_weighted", float(auc_weighted))
+    acc = model.score(x_test, y_test)
+    run.log("Accuracy", float(acc))
 
     os.makedirs('outputs', exist_ok=True)
     joblib.dump(model,'outputs/model.joblib')

@@ -1,0 +1,2 @@
+2026-01-13 09:16:08.886 - INFO - 6621 - azureml.automl.runtime.featurization.data_transformer.__init__:190 - Feature sweeping enabled: False
+2026-01-13 09:16:08.888 - INFO - 6621 - azureml.automl.runtime.featurization.data_transformer.__init__:191 - Feature sweeping timeout: 86400
