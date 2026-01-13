@@ -81,7 +81,7 @@ automl_config = AutoMLConfig(compute_target=compute_target,
                             )
 ```
 ### Results
-#### Completed AutoML Runs
+#### Completed Hyperdrive Runs
 
 ![](images/jobs_completed.png)
 
