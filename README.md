@@ -133,9 +133,29 @@ The HyperDrive experiment was configured with the following settings:
 The BanditPolicy stops poorly performing runs early if their performance is significantly worse than the best run, which saves compute time and speeds up the search.
 
 ### Results
-*TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
+The HyperDrive experiment identified the following best-performing run:
+- Best Run ID: HD_be30db1f-3947-441e-875e-dee6de96f428_2
+- Best Accuracy: 0.7667 (76.67%)
 
-*TODO* Remeber to provide screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
+This means that the trained Logistic Regression model correctly classified approximately 77% of the patients in the dataset.
+
+#### Best model parameters
+
+| Hyperparameter | Value | Interpretation                                                                        |
+| -------------- | ----- | ------------------------------------------------------------------------------------- |
+| **C**          | 1.0   | Moderate regularization (allows the model to fit the data more flexibly than C = 0.1) |
+| **max_iter**   | 50    | Enough iterations for the optimizer to converge                                       |
+
+With these parameters, the model achieved the highest validation accuracy among all HyperDrive runs.
+
+#### Model results and performance
+The model performance could be improved in a few practical ways:
+
+First, only 6 HyperDrive runs were executed in this experiment. This strongly limits the exploration of the hyperparameter space. Increasing the total number of runs would allow HyperDrive to test more parameter combinations and increase the chance of finding a better-performing model.
+
+Second, the hyperparameter search space was very small. Only two values of C and three values of max_iter were tested. Expanding these ranges would give the optimization process more flexibility.
+
+Finally, accuracy was used as the optimization metric. Since the dataset is imbalanced, using AUC instead of accuracy could lead to a more meaningful and better-generalizing model.
 
 ## Model Deployment
 *TODO*: Give an overview of the deployed model and instructions on how to query the endpoint with a sample input.
