@@ -100,8 +100,41 @@ To improve the results, the following actions can be applied:
 Screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
 ## Hyperparameter Tuning
-*TODO*: What kind of model did you choose for this experiment and why? Give an overview of the types of parameters and their ranges used for the hyperparameter search
+For this experiment, a Logistic Regression model was selected as the baseline classifier.
 
+The main reasons for choosing Logistic Regression were:
+
+The task is a binary classification problem (DEATH_EVENT: 0 or 1), which Logistic Regression is naturally designed for.
+
+The dataset is small to medium sized, so a linear model can be trained efficiently and reliably.
+
+Hyperparameter tuning was performed using Azure ML HyperDrive with RandomParameterSampling.
+Two key hyperparameters of Logistic Regression were optimized:
+| Hyperparameter | Meaning                                                                                                      | Search Range |
+| -------------- | ------------------------------------------------------------------------------------------------------------ | ------------ |
+| **C**          | Inverse of regularization strength (controls model complexity). Smaller values mean stronger regularization. | {0.1, 1}     |
+| **max_iter**   | Maximum number of iterations for the optimizer to converge.                                                  | {10, 20, 50} |
+
+```python
+param_sampling = RandomParameterSampling(
+    {
+        '--C' : choice(0.1,1),
+        '--max_iter': choice(10,20,50)
+    }
+)
+```
+
+The HyperDrive experiment was configured with the following settings:
+
+- Sampling method: Random search
+- Primary metric: Accuracy (maximized)
+- Early stopping policy: BanditPolicy
+- evaluation interval = 2
+- slack factor = 0.2
+- Maximum total runs: 6
+- Maximum concurrent runs: 4
+
+The BanditPolicy stops poorly performing runs early if their performance is significantly worse than the best run, which saves compute time and speeds up the search.
 
 ### Results
 *TODO*: What are the results you got with your model? What were the parameters of the model? How could you have improved it?
