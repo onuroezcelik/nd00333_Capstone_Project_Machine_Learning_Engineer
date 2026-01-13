@@ -81,7 +81,7 @@ automl_config = AutoMLConfig(compute_target=compute_target,
                             )
 ```
 ### Results
-#### Completed Hyperdrive Runs
+#### Completed AutoML Runs
 
 ![](images/jobs_completed.png)
 
@@ -139,7 +139,7 @@ The HyperDrive experiment was configured with the following settings:
 The BanditPolicy stops poorly performing runs early if their performance is significantly worse than the best run, which saves compute time and speeds up the search.
 
 ### Results
-#### Completed AutoML Runs
+#### Completed Hyperdrive Runs
 
 ![](images/jobs_completed.png)
 
