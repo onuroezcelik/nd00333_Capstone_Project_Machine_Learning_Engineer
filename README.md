@@ -81,6 +81,11 @@ automl_config = AutoMLConfig(compute_target=compute_target,
                             )
 ```
 ### Results
+#### Completed AutoML Runs
+
+![](images/jobs_completed.png)
+
+#### Best Model
 The best performing model is the VotingEnsemble with an Accuracy value of 0.87609
 
 ![](images/automl_best_model.png)
@@ -89,10 +94,11 @@ Ranking of the models:
 
 ![](images/automl_best_model_ranking.png)
 
-Screenshots of the RunDetails:
+#### Screenshots of the RunDetails
 
 ![](images/automl_best_model_rundetails.png)
 
+#### Improvements
 To improve the results, the following actions can be applied:
 - Increasing the experiment timeout of only 20 minutes would allow AutoML to evaluate more algorithms and hyperparameter combinations, potentially leading to a stronger VotingEnsemble.
 - Training the AutoML model on a larger or more diverse dataset would help improve generalization performance and reduce the risk of overfitting, especially when optimizing for accuracy.
@@ -133,6 +139,11 @@ The HyperDrive experiment was configured with the following settings:
 The BanditPolicy stops poorly performing runs early if their performance is significantly worse than the best run, which saves compute time and speeds up the search.
 
 ### Results
+#### Completed AutoML Runs
+
+![](images/jobs_completed.png)
+
+#### Best Model
 The HyperDrive experiment identified the following best-performing run:
 - Best Run ID: HD_be30db1f-3947-441e-875e-dee6de96f428_2
 - Best Accuracy: 0.7667 (76.67%)
@@ -141,7 +152,7 @@ This means that the trained Logistic Regression model correctly classified appro
 
 ![](images/hyperdrive_best_model.png)
 
-#### Best model parameters
+Best model parameters:
 
 | Hyperparameter | Value | Interpretation                                                                        |
 | -------------- | ----- | ------------------------------------------------------------------------------------- |
@@ -150,11 +161,11 @@ This means that the trained Logistic Regression model correctly classified appro
 
 With these parameters, the model achieved the highest validation accuracy among all HyperDrive runs.
 
-Screenshot of the Rundetails:
+#### Screenshots of the RunDetails
 
 ![](images/hyperdrive_best_model_rundetails.png)
 
-#### Model results and performance
+#### Improvements
 The model performance could be improved in a few practical ways:
 
 First, only 6 HyperDrive runs were executed in this experiment. This strongly limits the exploration of the hyperparameter space. Increasing the total number of runs would allow HyperDrive to test more parameter combinations and increase the chance of finding a better-performing model.
