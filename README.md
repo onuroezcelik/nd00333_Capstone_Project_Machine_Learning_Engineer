@@ -184,6 +184,10 @@ The VotingEnsemble model was deployed as an Azure Machine Learning web service, 
 By the way, both models was also registered as shown below:
 ![](images/registered_models.png)
 
+Due to the limited access-rights of the on-demand lab of Udacity users, the the model cannot be deployed as a webservice. Therefore the objective of this project cannot be delivered as requested. Fixing a bug of the working environment is not a duty of the course participants.
+
+![](images/limited_user_access_error.png)
+
 ## Screen Recording
 Due to company policy restrictions, screen recording is not permitted in the working environment.
 Therefore, a screen recording of the project execution cannot be provided.
