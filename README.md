@@ -63,9 +63,9 @@ Give an overview of the `automl` settings and configuration you used for this ex
 ```python
 # automl settings
 automl_settings = {
-    "experiment_timeout_minutes": 20,
+    "experiment_timeout_minutes": 15,
     "max_concurrent_iterations": 5,
-    "primary_metric" : 'AUC_weighted'
+    "primary_metric" : 'accuracy'
 }
 
 # automl config
@@ -81,12 +81,16 @@ automl_config = AutoMLConfig(compute_target=compute_target,
                             )
 ```
 ### Results
-The best performing model is the VotingEnsemble with an AUC_weighted value of 0.92
+The best performing model is the VotingEnsemble with an Accuracy value of 0.87609
 
 ![](images/automl_best_model.png)
 
+Ranking of the models:
+
+![](images/automl_best_model_ranking.png)
+
 To improve the results, the following actions can be applied:
-- With an experiment timeout of only 20 minutes (experiment_timeout_minutes=20) and a limited number of concurrent iterations, increasing the time budget would allow AutoML to evaluate more algorithms and hyperparameter combinations, potentially leading to a stronger VotingEnsemble.
+- Increasing the experiment timeout of only 20 minutes would allow AutoML to evaluate more algorithms and hyperparameter combinations, potentially leading to a stronger VotingEnsemble.
 - Training the AutoML model on a larger or more diverse dataset would help improve generalization performance and reduce the risk of overfitting, especially when optimizing for AUC_weighted.
 
 Screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
