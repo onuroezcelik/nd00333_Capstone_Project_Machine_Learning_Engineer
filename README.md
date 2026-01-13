@@ -89,9 +89,13 @@ Ranking of the models:
 
 ![](images/automl_best_model_ranking.png)
 
+Screenshots of the RunDetails:
+
+![](images/automl_best_model_rundetails.png)
+
 To improve the results, the following actions can be applied:
 - Increasing the experiment timeout of only 20 minutes would allow AutoML to evaluate more algorithms and hyperparameter combinations, potentially leading to a stronger VotingEnsemble.
-- Training the AutoML model on a larger or more diverse dataset would help improve generalization performance and reduce the risk of overfitting, especially when optimizing for AUC_weighted.
+- Training the AutoML model on a larger or more diverse dataset would help improve generalization performance and reduce the risk of overfitting, especially when optimizing for accuracy.
 
 Screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
 
