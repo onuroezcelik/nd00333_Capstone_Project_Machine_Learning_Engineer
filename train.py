@@ -30,8 +30,8 @@ def main():
     run.log("Max iterations:", int(args.max_iter))
 
     subscription_id = '510b94ba-e453-4417-988b-fbdc37b55ca7'
-    resource_group = 'aml-quickstarts-293572'
-    workspace_name = 'quick-starts-ws-293572'
+    resource_group = 'aml-quickstarts-293616'
+    workspace_name = 'quick-starts-ws-293616'
 
     workspace = Workspace(subscription_id, resource_group, workspace_name)
 
