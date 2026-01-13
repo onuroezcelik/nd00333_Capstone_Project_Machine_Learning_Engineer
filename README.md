@@ -150,6 +150,8 @@ This means that the trained Logistic Regression model correctly classified appro
 
 With these parameters, the model achieved the highest validation accuracy among all HyperDrive runs.
 
+Screenshot of the Rundetails:
+
 ![](images/hyperdrive_best_model_rundetails.png)
 
 #### Model results and performance
