@@ -181,6 +181,9 @@ Based on the experiment results, the models trained with HyperDrive did not achi
 
 The VotingEnsemble model was deployed as an Azure Machine Learning web service, allowing it to be consumed via a REST API. This enables external applications to send patient data to the endpoint and receive real-time predictions for heart failure risk.
 
+By the way, both models was also registered as shown below:
+![](images/registered_models.png)
+
 ## Screen Recording
 Due to company policy restrictions, screen recording is not permitted in the working environment.
 Therefore, a screen recording of the project execution cannot be provided.
