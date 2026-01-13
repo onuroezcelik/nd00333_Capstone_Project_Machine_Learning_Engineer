@@ -97,16 +97,12 @@ To improve the results, the following actions can be applied:
 - Increasing the experiment timeout of only 20 minutes would allow AutoML to evaluate more algorithms and hyperparameter combinations, potentially leading to a stronger VotingEnsemble.
 - Training the AutoML model on a larger or more diverse dataset would help improve generalization performance and reduce the risk of overfitting, especially when optimizing for accuracy.
 
-Screenshots of the `RunDetails` widget as well as a screenshot of the best model trained with it's parameters.
-
 ## Hyperparameter Tuning
 For this experiment, a Logistic Regression model was selected as the baseline classifier.
 
 The main reasons for choosing Logistic Regression were:
-
-The task is a binary classification problem (DEATH_EVENT: 0 or 1), which Logistic Regression is naturally designed for.
-
-The dataset is small to medium sized, so a linear model can be trained efficiently and reliably.
+- The task is a binary classification problem (DEATH_EVENT: 0 or 1), which Logistic Regression is naturally designed for.
+- The dataset is small to medium sized, so a linear model can be trained efficiently and reliably.
 
 Hyperparameter tuning was performed using Azure ML HyperDrive with RandomParameterSampling.
 Two key hyperparameters of Logistic Regression were optimized:
