@@ -187,7 +187,20 @@ By the way, both models was also registered as shown below:
 The model is successfully deployed.
 ![](images/model_deployed.png)
 
+The endpoints which are created after deployment:
+![](images/endpoints_details.png)
 
+The successsful operation state of the endpoint:
+![](images/endpoints_details.png)
+
+score uri and authentication key are copied to paste it in the endpoint.py file.
+![](images/consume_endpoints.png)
+
+endpoints.py file is prepared to test our webservice with 2 set of patient data:
+![](images/consume_endpoints_py.png)
+
+the results of the model can be seen below:
+![](images/consume_endpoints_results.png)
 
 ## Screen Recording
 Due to company policy restrictions, screen recording is not permitted in the working environment.
