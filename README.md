@@ -184,6 +184,9 @@ The VotingEnsemble model was deployed as an Azure Machine Learning web service, 
 By the way, both models was also registered as shown below:
 ![](images/registered_models.png)
 
+The model is successfully deployed.
+![](images/model_deployed.png)
+
 
 
 ## Screen Recording
