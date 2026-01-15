@@ -220,14 +220,16 @@ The successsful operation state of the endpoint:
 
 ![](images/endpoints_details.png)
 
-score uri and authentication key are copied to paste it in the endpoint.py file.
-
-![](images/consume_endpoints.png)
-
+### Consuming endpoint
 endpoints.py file is prepared to test our webservice with 2 set of patient data:
 
 ![](images/consume_endpoint_py.png)
 
+Score uri and authentication key are copied to paste it in the endpoint.py file.
+
+![](images/consume_endpoints.png)
+
+### Results
 the results of the model can be seen below:
 
 ![](images/consume_endpoint_results.png)
