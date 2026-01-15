@@ -1,2 +1,10 @@
 2026-01-13 09:16:08.886 - INFO - 6621 - azureml.automl.runtime.featurization.data_transformer.__init__:190 - Feature sweeping enabled: False
 2026-01-13 09:16:08.888 - INFO - 6621 - azureml.automl.runtime.featurization.data_transformer.__init__:191 - Feature sweeping timeout: 86400
+2026-01-15 08:34:33.498 - INFO - 4185 - azureml.automl.runtime.featurization.data_transformer.__init__:190 - Feature sweeping enabled: False
+2026-01-15 08:34:33.508 - INFO - 4185 - azureml.automl.runtime.featurization.data_transformer.__init__:191 - Feature sweeping timeout: 86400
+2026-01-15 12:19:04.014 - INFO - 4185 - azureml.automl.runtime.featurization.data_transformer.__init__:190 - Feature sweeping enabled: False
+2026-01-15 12:19:04.022 - INFO - 4185 - azureml.automl.runtime.featurization.data_transformer.__init__:191 - Feature sweeping timeout: 86400
+2026-01-15 12:19:59.346 - INFO - 4185 - azureml.automl.runtime.featurization.data_transformer.__init__:190 - Feature sweeping enabled: False
+2026-01-15 12:19:59.353 - INFO - 4185 - azureml.automl.runtime.featurization.data_transformer.__init__:191 - Feature sweeping timeout: 86400
+2026-01-15 12:35:40.835 - INFO - 4185 - azureml.automl.runtime.featurization.data_transformer.__init__:190 - Feature sweeping enabled: False
+2026-01-15 12:35:40.845 - INFO - 4185 - azureml.automl.runtime.featurization.data_transformer.__init__:191 - Feature sweeping timeout: 86400
