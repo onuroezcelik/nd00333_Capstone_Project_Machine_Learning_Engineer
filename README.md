@@ -181,10 +181,34 @@ Based on the experiment results, the models trained with HyperDrive did not achi
 
 The VotingEnsemble model was deployed as an Azure Machine Learning web service, allowing it to be consumed via a REST API. This enables external applications to send patient data to the endpoint and receive real-time predictions for heart failure risk.
 
-By the way, both models was also registered as shown below:
+### Register the models
+Both models were registered as shown below:
 ![](images/registered_models.png)
 
-The model is successfully deployed.
+### Deployment of AutoML model with best accuracy metric
+The model is successfully deployed with the following script.
+
+```python
+best_automl_run.download_file('outputs/conda_env_v_1_0_0.yml', 'env.yml')
+environment = best_automl_run.get_environment()
+entry_script='scoring.py'
+
+inference_config = InferenceConfig(entry_script = entry_script, environment = environment)
+
+deployment_config = AciWebservice.deploy_configuration(cpu_cores = 1, 
+                                                    memory_gb = 1, 
+                                                    auth_enabled= True, 
+                                                    enable_app_insights= True)
+
+service = Model.deploy(ws, "bestmodeldeployv5", [best_automl_model], inference_config, deployment_config)
+service.wait_for_deployment(show_output = True)
+```
+This code snippet demonstrates how to deploy the best model from an Azure Automated ML (AutoML) run as a real-time web service using Azure Container Instances (ACI). 
+Here is a step-by-step breakdown of what each part does:
+- InferenceConfig: This defines the "how" of the deployment. It points to the entry_script (scoring.py), which contains the logic to load the model and process incoming data, and the environment which contains the necessary Python libraries.
+- AciWebservice.deploy_configuration: This specifies the "where" and the hardware resources. Here, it allocates 1 CPU core and 1 GB of RAM. It also enables Authentication (requiring a key to access the API) and App Insights for monitoring and logging the service's performance.
+- Model.deploy: This is the execution step. It takes the Workspace (ws), a unique deployment name (bestmodeldeployv5), the best AutoML model object, and the configurations defined above to trigger the creation of the web service.
+- service.wait_for_deployment: This command pauses the script and displays progress logs until the deployment is finished. Once complete, it provides a REST API endpoint that you can use to get real-time predictions. 
 
 ![](images/model_deployed.png)
 
