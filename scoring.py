@@ -34,17 +34,16 @@ def init():
     global model
     # This name is model.id of model that we want to deploy deserialize the model file back
     # into a sklearn model
-    model_path = os.path.join(os.getenv('AZUREML_MODEL_DIR'), 'model.pkl')
-    path = os.path.normpath(model_path)
-    path_split = path.split(os.sep)
-    log_server.update_custom_dimensions({'model_name': path_split[-3], 'model_version': path_split[-2]})
-    try:
-        logger.info("Loading model from path.")
-        model = joblib.load(model_path)
-        logger.info("Loading successful.")
-    except Exception as e:
-        logging_utilities.log_traceback(e, logger)
-        raise
+    
+    base = os.getenv("AZUREML_MODEL_DIR")   # /var/azureml-app/azureml-models/best_automl_model/3
+
+    model_path = os.path.join(base, "outputs", "model.pkl")
+
+    print("AZUREML_MODEL_DIR =", base)
+    print("Loading model from:", model_path)
+
+    model = joblib.load(model_path)
+
 
 @input_schema('method', method_sample, convert_to_provided_type=False)
 @input_schema('data', PandasParameterType(input_sample))
