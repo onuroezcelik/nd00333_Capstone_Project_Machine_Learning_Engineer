@@ -22,7 +22,14 @@ By applying both AutoML and HyperDrive-based model optimization, this project ev
 - Register and deploy the best-performing model as a REST endpoint.
 - Demonstrate how the deployed model can be consumed via an HTTP inference request.
 
-## Dataset
+Table of Contents:
+1- Dataset Creation
+2- Train AutoML Model
+3- Train Hyperdrive Model
+4- Deployment of the Best Model
+5- Inference Request
+
+## Dataset Creation
 
 ### Overview
 The dataset used in this project is the Heart Failure Clinical Records Dataset, obtained from Kaggle (https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data).
@@ -57,7 +64,7 @@ Registering dataset in Azure ML Studio:
 
 ![](images/01_heart-failure-clinical-dataset-registered.png)
 
-## AutoML Model
+## Train AutoML Model
 Give an overview of the `automl` settings and configuration you used for this experiment
 
 ```python
@@ -103,7 +110,7 @@ To improve the results, the following actions can be applied:
 - Increasing the experiment timeout of only 15 minutes would allow AutoML to evaluate more algorithms and hyperparameter combinations, potentially leading to a stronger VotingEnsemble.
 - Training the AutoML model on a larger or more diverse dataset would help improve generalization performance and reduce the risk of overfitting, especially when optimizing for accuracy.
 
-## Hyperdrive Model
+## Train Hyperdrive Model
 For this experiment, a Logistic Regression model was selected as the baseline classifier.
 
 The main reasons for choosing Logistic Regression were:
@@ -176,7 +183,7 @@ Second, the hyperparameter search space was very small. Only two values of C and
 
 Finally, accuracy was used as the optimization metric. Since the dataset is imbalanced, using AUC instead of accuracy could lead to a more meaningful and better-generalizing model.
 
-## Model Deployment
+## Deployment of the Best Model
 Based on the experiment results, the models trained with HyperDrive did not achieve competitive performance compared to the models produced by AutoML. AutoML evaluated a broader range of algorithms and preprocessing pipelines and consistently delivered higher-performing models. For this reason, the model selected for deployment was taken from the AutoML best run. The best-performing model was generated using a VotingEnsemble algorithm, which combines the predictions of multiple individual models to achieve better generalization and robustness.
 
 The VotingEnsemble model was deployed as an Azure Machine Learning web service, allowing it to be consumed via a REST API. This enables external applications to send patient data to the endpoint and receive real-time predictions for heart failure risk.
@@ -220,7 +227,7 @@ The successsful operation state of the endpoint:
 
 ![](images/05_endpoints_details.png)
 
-### Consuming endpoint
+### Inference Request
 endpoints.py file is prepared to test our webservice with 2 set of patient data:
 
 ![](images/05_consume_endpoint_py.png)
