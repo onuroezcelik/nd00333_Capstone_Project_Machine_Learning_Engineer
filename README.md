@@ -65,6 +65,7 @@ Registering dataset in Azure ML Studio:
 ![](images/01_heart-failure-clinical-dataset-registered.png)
 
 ## 2. Train AutoML Model
+### 2.1. AutoML Settings
 Give an overview of the `automl` settings and configuration you used for this experiment
 
 ```python
