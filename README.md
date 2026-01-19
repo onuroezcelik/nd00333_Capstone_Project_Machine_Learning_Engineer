@@ -112,6 +112,7 @@ To improve the results, the following actions can be applied:
 - Training the AutoML model on a larger or more diverse dataset would help improve generalization performance and reduce the risk of overfitting, especially when optimizing for accuracy.
 
 ## 3. Train Hyperdrive Model
+### 3.1. Hyperdrive Settings
 For this experiment, a Logistic Regression model was selected as the baseline classifier.
 
 The main reasons for choosing Logistic Regression were:
