@@ -57,7 +57,7 @@ Registering dataset in Azure ML Studio:
 
 ![](images/01_heart-failure-clinical-dataset-registered.png)
 
-## Automated ML
+## AutoML Model
 Give an overview of the `automl` settings and configuration you used for this experiment
 
 ```python
@@ -81,7 +81,7 @@ automl_config = AutoMLConfig(compute_target=compute_target,
                             )
 ```
 ### Results
-#### Completed AutoML Job
+#### Completed AutoML Model
 
 ![](images/02_jobs_completed.png)
 
@@ -103,7 +103,7 @@ To improve the results, the following actions can be applied:
 - Increasing the experiment timeout of only 15 minutes would allow AutoML to evaluate more algorithms and hyperparameter combinations, potentially leading to a stronger VotingEnsemble.
 - Training the AutoML model on a larger or more diverse dataset would help improve generalization performance and reduce the risk of overfitting, especially when optimizing for accuracy.
 
-## Hyperparameter Tuning
+## Hyperdrive Model
 For this experiment, a Logistic Regression model was selected as the baseline classifier.
 
 The main reasons for choosing Logistic Regression were:
