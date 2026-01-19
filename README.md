@@ -92,11 +92,11 @@ The best performing model is the VotingEnsemble with an Accuracy value of 0.8795
 
 Ranking of the models:
 
-![](images/automl_best_model_ranking.png)
+![](images/03_automl_best_model_ranking.png)
 
 #### Screenshots of the RunDetails
 
-![](images/automl_best_model_rundetails.png)
+![](images/03_automl_best_model_rundetails.png)
 
 #### Improvements
 To improve the results, the following actions can be applied:
