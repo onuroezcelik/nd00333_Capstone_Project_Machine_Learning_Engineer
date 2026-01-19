@@ -1,4 +1,4 @@
-# Capstone Project - Azure Machine Learning Engineer
+<img width="1219" height="972" alt="image" src="https://github.com/user-attachments/assets/bbe2f2c4-36e6-41fc-90f4-64f7c85bc49b" /># Capstone Project - Azure Machine Learning Engineer
 
 ## Project Overview
 
@@ -145,14 +145,14 @@ The BanditPolicy stops poorly performing runs early if their performance is sign
 
 #### Best Model
 The HyperDrive experiment identified the following best-performing run:
-- Best Run ID: HD_be30db1f-3947-441e-875e-dee6de96f428_2
+- Best Run ID: HD_aff7f06a-bfb4-4421-b7e5-e3204608ea83_2
 - Best Accuracy: 0.7667 (76.67%)
 
 This means that the trained Logistic Regression model correctly classified approximately 77% of the patients in the dataset.
 
-![](images/hyperdrive_best_model.png)
+![](images/04_hyperdrive_best_model.png)
 
-![](images/hyperdrive_best_model_run.png)
+![](images/04_hyperdrive_best_model_run.png)
 
 Best model parameters:
 
@@ -165,7 +165,7 @@ With these parameters, the model achieved the highest validation accuracy among 
 
 #### Screenshots of the RunDetails
 
-![](images/hyperdrive_best_model_rundetails.png)
+![](images/04_hyperdrive_best_model_rundetails.png)
 
 #### Improvements
 The model performance could be improved in a few practical ways:
