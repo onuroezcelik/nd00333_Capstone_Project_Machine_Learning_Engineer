@@ -141,7 +141,7 @@ The BanditPolicy stops poorly performing runs early if their performance is sign
 ### Results
 #### Completed Hyperdrive Job
 
-![](images/jobs_completed.png)
+![](images/02_jobs_completed.png)
 
 #### Best Model
 The HyperDrive experiment identified the following best-performing run:
