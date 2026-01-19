@@ -29,9 +29,9 @@ def main():
     run.log("Regularization Strength:", float(args.C))
     run.log("Max iterations:", int(args.max_iter))
 
-    subscription_id = '510b94ba-e453-4417-988b-fbdc37b55ca7'
-    resource_group = 'aml-quickstarts-293616'
-    workspace_name = 'quick-starts-ws-293616'
+    subscription_id = '6971f5ac-8af1-446e-8034-05acea24681f'
+    resource_group = 'aml-quickstarts-294022'
+    workspace_name = 'quick-starts-ws-294022'
 
     workspace = Workspace(subscription_id, resource_group, workspace_name)
 
