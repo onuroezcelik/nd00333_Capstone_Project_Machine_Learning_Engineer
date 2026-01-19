@@ -244,7 +244,4 @@ the results of the model can be seen below:
 ![](images/05_consume_endpoint_results.png)
 
 ## 6. Screen Recording
-Due to company policy restrictions, screen recording is not permitted in the working environment.
-Therefore, a screen recording of the project execution cannot be provided.
-
-The project functionality and workflow are instead demonstrated through detailed screenshots and step-by-step explanations throughout this README.
+A screen recording of the project execution cannot be found in this link: https://www.youtube.com/watch?v=dGjBLTd6cfY
