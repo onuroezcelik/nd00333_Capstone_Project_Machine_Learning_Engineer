@@ -183,7 +183,7 @@ The VotingEnsemble model was deployed as an Azure Machine Learning web service, 
 
 ### Register the models
 Both models were registered as shown below:
-![](images/registered_models.png)
+![](images/05_registered_models.png)
 
 ### Deployment of AutoML model with best accuracy metric
 The model is successfully deployed with the following script.
@@ -210,15 +210,15 @@ Here is a step-by-step breakdown of what each part does:
 - Model.deploy: This is the execution step. It takes the Workspace (ws), a unique deployment name (bestmodeldeployv5), the best AutoML model object, and the configurations defined above to trigger the creation of the web service.
 - service.wait_for_deployment: This command pauses the script and displays progress logs until the deployment is finished. Once complete, it provides a REST API endpoint that you can use to get real-time predictions. 
 
-![](images/model_deployed.png)
+![](images/05_model_deployed.png)
 
 The endpoints which are created after deployment:
 
-![](images/endpoints.png)
+![](images/05_endpoints.png)
 
 The successsful operation state of the endpoint:
 
-![](images/endpoints_details.png)
+![](images/05_endpoints_details.png)
 
 ### Consuming endpoint
 endpoints.py file is prepared to test our webservice with 2 set of patient data:
@@ -227,7 +227,7 @@ endpoints.py file is prepared to test our webservice with 2 set of patient data:
 
 Score uri and authentication key are copied to paste it in the endpoint.py file.
 
-![](images/consume_endpoints.png)
+![](images/05_consume_endpoints.png)
 
 ### Results
 the results of the model can be seen below:
