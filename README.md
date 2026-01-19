@@ -244,4 +244,4 @@ the results of the model can be seen below:
 ![](images/05_consume_endpoint_results.png)
 
 ## 6. Screen Recording
-A screen recording of the project execution cannot be found in this link: https://www.youtube.com/watch?v=dGjBLTd6cfY
+A screen recording of the project execution can be found in this link: https://www.youtube.com/watch?v=dGjBLTd6cfY
