@@ -51,11 +51,11 @@ The input features used for model training include clinical and demographic attr
 ### Access
 The dataset is firstly downloaded from https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data, then uploaded locally to Azure ML Workspace, and then used directly in the experiments.
 
-![](images/heart-failure-clinical-dataset-kaggle.png)
+![](images/01_heart-failure-clinical-dataset-kaggle.png)
 
 Registering dataset in Azure ML Studio:
 
-![](images/heart-failure-clinical-dataset-registered.png)
+![](images/01_heart-failure-clinical-dataset-registered.png)
 
 ## Automated ML
 Give an overview of the `automl` settings and configuration you used for this experiment
