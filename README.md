@@ -86,7 +86,7 @@ automl_config = AutoMLConfig(compute_target=compute_target,
 ![](images/02_jobs_completed.png)
 
 #### Best Model
-The best performing model is the VotingEnsemble with an Accuracy value of 0.87966
+The best performing model is the VotingEnsemble with an Accuracy value of 0.87954
 
 ![](images/03_automl_best_model.png)
 
