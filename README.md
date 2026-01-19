@@ -1,4 +1,4 @@
-<img width="1219" height="972" alt="image" src="https://github.com/user-attachments/assets/bbe2f2c4-36e6-41fc-90f4-64f7c85bc49b" /># Capstone Project - Azure Machine Learning Engineer
+# Capstone Project - Azure Machine Learning Engineer
 
 ## Project Overview
 
