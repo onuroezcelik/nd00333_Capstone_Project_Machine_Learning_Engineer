@@ -22,20 +22,20 @@ By applying both AutoML and HyperDrive-based model optimization, this project ev
 - Register and deploy the best-performing model as a REST endpoint.
 - Demonstrate how the deployed model can be consumed via an HTTP inference request.
 
-Table of Contents:
-1- Dataset Creation
-2- Train AutoML Model
-3- Train Hyperdrive Model
-4- Deployment of the Best Model
-5- Inference Request
+## Table of Contents:
+1. Dataset Creation
+2. Train AutoML Model
+3. Train Hyperdrive Model
+4. Deployment of the Best Model
+5. Inference Request
 
-## Dataset Creation
+## 1. Dataset Creation
 
-### Overview
+### 1.1. Overview
 The dataset used in this project is the Heart Failure Clinical Records Dataset, obtained from Kaggle (https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data).
 The file "heart_failure_clinical_records_dataset.csv" contains clinical records of 299 patients who experienced heart failure.
 
-### Task
+### 1.2. Task
 The task addressed in this project is a binary classification problem: predicting whether a patient will experience mortality due to heart failure. The target variable is DEATH_EVENT, where:
 - 1 indicates that the patient died during the follow-up period
 - 0 indicates survival
@@ -55,7 +55,7 @@ The input features used for model training include clinical and demographic attr
 - time : Follow-up period (days).
 - DEATH_EVENT : If the patient deceased during the follow-up period (boolean).
 
-### Access
+### 1.3. Access
 The dataset is firstly downloaded from https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data, then uploaded locally to Azure ML Workspace, and then used directly in the experiments.
 
 ![](images/01_heart-failure-clinical-dataset-kaggle.png)
@@ -64,7 +64,7 @@ Registering dataset in Azure ML Studio:
 
 ![](images/01_heart-failure-clinical-dataset-registered.png)
 
-## Train AutoML Model
+## 2. Train AutoML Model
 Give an overview of the `automl` settings and configuration you used for this experiment
 
 ```python
@@ -87,12 +87,12 @@ automl_config = AutoMLConfig(compute_target=compute_target,
                              **automl_settings
                             )
 ```
-### Results
-#### Completed AutoML Model
+### 2.2. Results
+#### 2.2.1. Completed AutoML Model
 
 ![](images/02_jobs_completed.png)
 
-#### Best Model
+#### 2.2.2. Best Model
 The best performing model is the VotingEnsemble with an Accuracy value of 0.87954
 
 ![](images/03_automl_best_model.png)
@@ -101,16 +101,16 @@ Ranking of the models:
 
 ![](images/03_automl_best_model_ranking.png)
 
-#### Screenshots of the RunDetails
+#### 2.2.3. Screenshots of the RunDetails
 
 ![](images/03_automl_best_model_rundetails.png)
 
-#### Improvements
+#### 2.2.4. Improvements
 To improve the results, the following actions can be applied:
 - Increasing the experiment timeout of only 15 minutes would allow AutoML to evaluate more algorithms and hyperparameter combinations, potentially leading to a stronger VotingEnsemble.
 - Training the AutoML model on a larger or more diverse dataset would help improve generalization performance and reduce the risk of overfitting, especially when optimizing for accuracy.
 
-## Train Hyperdrive Model
+## 3. Train Hyperdrive Model
 For this experiment, a Logistic Regression model was selected as the baseline classifier.
 
 The main reasons for choosing Logistic Regression were:
@@ -145,12 +145,12 @@ The HyperDrive experiment was configured with the following settings:
 
 The BanditPolicy stops poorly performing runs early if their performance is significantly worse than the best run, which saves compute time and speeds up the search.
 
-### Results
+### 3.1. Results
 #### Completed Hyperdrive Job
 
 ![](images/02_jobs_completed.png)
 
-#### Best Model
+#### 3.2. Best Model
 The HyperDrive experiment identified the following best-performing run:
 - Best Run ID: HD_aff7f06a-bfb4-4421-b7e5-e3204608ea83_2
 - Best Accuracy: 0.7667 (76.67%)
@@ -170,11 +170,11 @@ Best model parameters:
 
 With these parameters, the model achieved the highest validation accuracy among all HyperDrive runs.
 
-#### Screenshots of the RunDetails
+#### 3.3. Screenshots of the RunDetails
 
 ![](images/04_hyperdrive_best_model_rundetails.png)
 
-#### Improvements
+#### 3.4. Improvements
 The model performance could be improved in a few practical ways:
 
 First, only 6 HyperDrive runs were executed in this experiment. This strongly limits the exploration of the hyperparameter space. Increasing the total number of runs would allow HyperDrive to test more parameter combinations and increase the chance of finding a better-performing model.
@@ -183,16 +183,16 @@ Second, the hyperparameter search space was very small. Only two values of C and
 
 Finally, accuracy was used as the optimization metric. Since the dataset is imbalanced, using AUC instead of accuracy could lead to a more meaningful and better-generalizing model.
 
-## Deployment of the Best Model
+## 4. Deployment of the Best Model
 Based on the experiment results, the models trained with HyperDrive did not achieve competitive performance compared to the models produced by AutoML. AutoML evaluated a broader range of algorithms and preprocessing pipelines and consistently delivered higher-performing models. For this reason, the model selected for deployment was taken from the AutoML best run. The best-performing model was generated using a VotingEnsemble algorithm, which combines the predictions of multiple individual models to achieve better generalization and robustness.
 
 The VotingEnsemble model was deployed as an Azure Machine Learning web service, allowing it to be consumed via a REST API. This enables external applications to send patient data to the endpoint and receive real-time predictions for heart failure risk.
 
-### Register the models
+### 4.1. Register the models
 Both models were registered as shown below:
 ![](images/05_registered_models.png)
 
-### Deployment of AutoML model with best accuracy metric
+### 4.2. Deployment of AutoML model with best accuracy metric
 The model is successfully deployed with the following script.
 
 ```python
@@ -227,7 +227,7 @@ The successsful operation state of the endpoint:
 
 ![](images/05_endpoints_details.png)
 
-### Inference Request
+### 5. Inference Request
 endpoints.py file is prepared to test our webservice with 2 set of patient data:
 
 ![](images/05_consume_endpoint_py.png)
@@ -236,12 +236,12 @@ Score uri and authentication key are copied to paste it in the endpoint.py file.
 
 ![](images/05_consume_endpoints.png)
 
-### Results
+### 5.1. Results
 the results of the model can be seen below:
 
 ![](images/05_consume_endpoint_results.png)
 
-## Screen Recording
+## 6. Screen Recording
 Due to company policy restrictions, screen recording is not permitted in the working environment.
 Therefore, a screen recording of the project execution cannot be provided.
 
