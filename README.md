@@ -100,7 +100,7 @@ Ranking of the models:
 
 #### Improvements
 To improve the results, the following actions can be applied:
-- Increasing the experiment timeout of only 20 minutes would allow AutoML to evaluate more algorithms and hyperparameter combinations, potentially leading to a stronger VotingEnsemble.
+- Increasing the experiment timeout of only 15 minutes would allow AutoML to evaluate more algorithms and hyperparameter combinations, potentially leading to a stronger VotingEnsemble.
 - Training the AutoML model on a larger or more diverse dataset would help improve generalization performance and reduce the risk of overfitting, especially when optimizing for accuracy.
 
 ## Hyperparameter Tuning
