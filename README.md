@@ -223,7 +223,7 @@ The successsful operation state of the endpoint:
 ### Consuming endpoint
 endpoints.py file is prepared to test our webservice with 2 set of patient data:
 
-![](images/consume_endpoint_py.png)
+![](images/05_consume_endpoint_py.png)
 
 Score uri and authentication key are copied to paste it in the endpoint.py file.
 
@@ -232,7 +232,7 @@ Score uri and authentication key are copied to paste it in the endpoint.py file.
 ### Results
 the results of the model can be seen below:
 
-![](images/consume_endpoint_results.png)
+![](images/05_consume_endpoint_results.png)
 
 ## Screen Recording
 Due to company policy restrictions, screen recording is not permitted in the working environment.
